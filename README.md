@@ -1,6 +1,5 @@
 # Unit 12—Tales from the Crypto
 
-![Stock Sentiment](Images/sentimental.jpeg)
 
 ## Background
 
@@ -30,11 +29,11 @@ Use the [newsapi](https://newsapi.org/) to pull the latest news articles for Bit
 
 Use descriptive statistics to answer the following questions:
 
-> Which coin had the highest mean positive score?
->
-> Which coin had the highest negative score?
->
-> Which coin had the highest positive score?
+
+> See plots for information about daily Sentiment score
+
+
+![Coins Sentiment](Images/coins_sentimental.png)
 
 
 
@@ -42,105 +41,78 @@ Use descriptive statistics to answer the following questions:
 
 In this section, you will use NLTK and Python to tokenize text, find n-gram counts, and create word clouds for both coins. 
 
-#### Tokenize
-
-Be sure to:
-
-1. Lowercase each word.
-2. Remove punctuation.
-3. Remove stop words.
 
 #### N-grams
 
 Next, look at the ngrams and word frequency for each coin.
 
-1. Use NLTK to produce the ngrams for N = 2.
-2. List the top 10 words for each coin.
+1. Use NLTK to produce the ngrams for N = 2, Top 10:
+    
+    
+    A. Bitcoin
+    * ('interest_rate', 4)
+    * ('us_stock', 3)
+    * ('digital_currency', 3)
+    * ('may_reuters', 3)
+    * ('rising_interest', 3)
+    * ('us_treasury', 2)
+    * ('elon_musk', 2)
+    * ('bitcoin_news', 2)
+    * ('job_report', 2)
+    * ('ugandas_central', 2)
+    
+    B. Ethreum:
+    * ('char_nvidia', 3),
+    * ('failing_disclose', 2),
+    * ('accept_cryptocurrency', 2),
+    * ('fine_cryptomining', 2),
+    * ('huobi_research', 2),
+    * ('nvidia_million', 2),
+    * ('crypto_mining', 2),
+    * ('mixing_service', 2),
+    * ('service_used', 2),
+    * ('used_north', 2
+
+2. List the top 10 words for each coin:
+
+    A. Bitcoin
+    * ('bitcoin', 24),
+    * ('char', 20),
+    * ('central', 10),
+    * ('republic', 8),
+    * ('african', 7),
+    * ('cryptocurrencies', 6),
+    * ('official', 5),
+    * ('currency', 5),
+    * ('reuters', 5),
+    * ('market', 5)
+    
+    B. Ethreum:
+    * ('char', 20),
+    * ('ethereum', 14),
+    * ('nft', 8),
+    * ('cryptocurrencies', 6),
+    * ('blockchain', 6),
+    * ('crypto', 6),
+    * ('rollup', 5),
+    * ('ha', 5),
+    * ('one', 5),
+    * ('bitcoin', 4)
 
 #### Word Clouds
 
 Finally, generate word clouds for each coin to summarize the news for each coin.
 
-![btc-word-cloud.png](Images/btc-word-cloud.png)
+![btc-word-cloud.png](Images/bitcoin_word_cloud.png)
 
-![eth-word-cloud.png](Images/eth-word-cloud.png)
+![eth-word-cloud.png](Images/eth_word_cloud.png)
 
 
 ### 3 - Named Entity Recognition
 
-In this section, you will build a named entity recognition model for both coins and visualize the tags using SpaCy.
+In this section, you will build a named entity recognition model for both coins and visualize the tags using SpaCy. We visualized most common Entities using Word Clouds
 
-![btc-ner.png](Images/btc-ner.png)
+![btc-ner.png](Images/btc_ner_word_cloud.png)
 
-![eth-ner.png](Images/eth-ner.png)
+![eth-ner.png](Images/eth_ner_word_cloud.png)
 
-
-
-### Resources
-
-[Vader Sentiment Analysis](http://www.nltk.org/howto/sentiment.html)
-
-
-### Hints and Considerations
-
-The free developer version of the News API limits the total daily requests, so be careful not to exceed the free limits.
-
-### Submission
-
-* Use the starter Jupyter Notebook provided to conduct the NLP analysis and host the notebook in a GitHub repository.
-
-* In your GitHub repository, include a ReadMe file that uses Markdown to summarize your homework.
-
-* Submit the link to your GitHub project to Bootcamp Spot.
-
----
-### Requirements
-
-#### Sentiment Analysis  (30 points)
-
-##### To receive all points, your code must:
-
-* Determine the coin with Highest Mean Positive Score. (10 points)
-* Determine the coin with Highest Negative Score. (10 points)
-* Determine the coin with Highest Positive Score. (10 points)
-
-#### Natural Language Processing  (30 points)
-
-##### To receive all points, your code must:
-
-* Use NLTK to lower case words, remove punctuation and remove stopwords. (8 points)
-* Use NLTK to produce n-grams. (8 points)
-* List the top 10 words for each Coin. (7 points)
-* Generate a Word Cloud for each Coin summarizing the news for each Coin. (7 points)
-
-#### Named Entity Recognition  (10 points)
-
-##### To receive all points, your code must:
-
-* Build a Named Entity Recognition model for both coins - Bitcoin and Ethereum - and visualized the tags for each coin using SpaCy. (10 points)
-
-#### Coding Conventions and Formatting (10 points)
-
-##### To receive all points, your code must:
-
-* Place imports at the beginning of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
-* Name functions and variables with lowercase characters and with words separated by underscores. (2 points)
-* Follow Don't Repeat Yourself (DRY) principles by creating maintainable and reusable code. (3 points)
-* Use concise logic and creative engineering where possible. (2 points)
-
-#### Deployment and Submission (10 points)
-
-##### To receive all points, you must:
-
-* Submit a link to a GitHub repository that’s cloned to your local machine and contains your files. (5 points)
-* Include appropriate commit messages in your files. (5 points)
-
-#### Code Comments (10 points)
-
-##### To receive all points, your code must:
-
-* Be well commented with concise, relevant notes that other developers can understand. (10 points)
-
----
-
-© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
